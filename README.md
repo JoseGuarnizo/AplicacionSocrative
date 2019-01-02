@@ -1,6 +1,6 @@
 # Proyecto-Aplicaciones
 
-- Se utiliza VUE CLI la cual no permite trabajar con apps un poco complejas por tal motivo se ha instalado el VUE CLI
+- Se utiliza VUE CLI la cual permite trabajar con apps un poco complejas por tal motivo se ha instalado el VUE CLI
 - Proceso de instalación:
   - Instlar node.js 
   - En la ventana de comandos de tu equipo colocar: npm install -g @vue/cli, les dejo el link de proceso paso a paso: https://cli.vuejs.org/guide/installation.html
