@@ -9,18 +9,19 @@ const app = new Vue({
       ag: false,
       ac: false,
 
+      metaData:[],
+      inombre: '',
       cuestonario: [],
       ipregunta: '',
       resp1: '',
       resp2: '',
       resp3: '',
       rValida: '',
-      ws: [],
       index:''
     },
   methods: {
     clear: function() {
-      this.pregunta = '';
+      this.ipregunta = '';
       this.resp1 = '';
       this.resp2 = '';
       this.resp3 = '';
@@ -63,7 +64,6 @@ const app = new Vue({
       switch(this.cuestonario[iindex].tipo){
         case '1':
           this.seeMO = true;
-
           this.ipregunta = this.cuestonario[iindex].pregunta;
           this.resp1 = this.cuestonario[iindex].opciones.opc1;
           this.resp2 = this.cuestonario[iindex].opciones.opc2;
@@ -73,7 +73,6 @@ const app = new Vue({
 
         case '2':
           this.seeVF = true;
-
           this.ipregunta = this.cuestonario[iindex].pregunta;
           this.rValida = this.cuestonario[iindex].valida;
           break;
@@ -114,6 +113,14 @@ const app = new Vue({
       this.cuestonario.splice(index, 1);
       localStorage.setItem('data-vue', JSON.stringify(this.cuestonario));
     },
+    enviarBackEnd(){
+      this.metaData.push({
+        nombre: this.inombre
+      });
+      this.sendMessage(this.metaData);
+      this.sendMessage(this.cuestonario);
+      this.metaData = [];
+    },
     //metodos de conexion a WebSocket
     connect() {
       socket = new WebSocket("ws://localhost:4567/profesor");
@@ -122,28 +129,20 @@ const app = new Vue({
       //socket.onmessage = this.messageWs;
     },
     openWs() {
-      /*this.ws.push({
-        estado: "conectado",
-        nombre: "Usuario"
-      });*/
       //console.log(sw.estado + " " + ws.nombre);
       alert("Usuario conectado");
       //this.sendMessage(this.key);
     },
     errorWs(evt) {
-      /*this.ws.push({
-        estado: "error",
-        nombre: "Usuario"
-      });*/
       alert("Usuario fallido");
-      console.log(evt.cuestonario);
+      //console.log(evt.cuestonario);
     },
     messageWs(evt) {
       json = JSON.parse(evt.cuestonario);
       console.log(evt.cuestonario);
     },
-    sendMessage() {
-      json = JSON.stringify(this.cuestonario);
+    sendMessage(msgData) {
+      json = JSON.stringify(msgData);
       socket.send(json);
     }
     /*json = JSON.stringify(evt.cuestonario);

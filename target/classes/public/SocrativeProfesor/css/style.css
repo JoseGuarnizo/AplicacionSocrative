@@ -14,7 +14,7 @@ body{
     
 }
 
-/*Fomulario*/
+/*Fomulario de entrada*/
 #title_form{
 	text-align: center;
 	color: #2980B9;
@@ -69,8 +69,118 @@ body{
 .form-group#contrasena-group::before{
     content: "\f023";
 }
-
-
 .forgot{
     padding: 5px 0;
+}
+
+/*Formulario de crear los cuestionarios solo botones*/
+
+h2{
+    font-family: "Font Awesome\ 5 Free";
+    color: #1F618D;
+}
+input, #nombrecue{
+    background-color: #FDFEFE;
+    color: #566573;
+    border-radius: 2px;
+    border: #566573;
+    height: 50px;
+    
+}
+#botonpri, #b{
+   
+    position: absolute;
+    text-align: right;
+    
+    top: 60px;
+    left: 600px;
+}
+#botonesprincipales{
+    width: 550px; 
+    margin: 0 auto;
+}
+#boton1{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    margin-left: 30px;
+}
+#boton2{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #82E0AA;
+    border-radius: 6px;
+    border: 2px solid #28B463;
+    margin-left: 30px;
+}
+#boton3{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color:#F4D03F;
+    border-radius: 6px;
+    border: 2px solid #D4AC0D;
+    margin-left: 30px;
+}
+/*Parte del formulairo solo las cajas*/
+#multi{
+    margin: 0 auto;
+	width: 620px;
+	padding-top: 40px;
+	color: white;
+    position: relative;
+    
+}
+input{
+    display: block;	
+}
+input{
+    width: 620px;
+    
+	border: none;
+	border-radius: 5px;
+}
+input, #numero{
+    background-color: #AED6F1;
+    border-radius: 5px;
+    color: #FDFEFE;
+}
+
+/*---------------------------------*/
+#VF{
+    margin: 0 auto;
+	width: 620px;
+	padding-top: 40px;
+	color: white;
+    position: relative;
+
+}
+#opciones{
+    background-color: #ABEBC6;
+    border-radius: 5px;
+    color: #FDFEFE;
+}
+
+/*--------------------------------*/
+#RC{
+    margin: 0 auto;
+	width: 620px;
+	padding-top: 40px;
+	color: white;
+    position: relative;
+}
+#estilo{
+    background-color: #f9e79f;
+    border-radius: 5px;
+    color: #FDFEFE;
 }
